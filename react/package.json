@@ -1,0 +1,27 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel watch index.js --out-dir=dist --public-url=/",
+    "build": "parcel build index.js --out-dir=build --public-url=/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "chart.js": "^4.4.7",
+    "d3": "^7.9.0",
+    "date-fns": "^2.28.0",
+    "js-cookie": "^3.0.5",
+    "react": "^19.0.0",
+    "react-datepicker": "^4.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@parcel/transformer-babel": "^2.13.3"
+  }
+}
