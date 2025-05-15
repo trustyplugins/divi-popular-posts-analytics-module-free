@@ -58127,12 +58127,13 @@ var AnalyticsChart = function AnalyticsChart() {
     }); // Toggle visibility
   };
   var fetchData = function fetchData(startDate, endDate, selectedPostType) {
-    //console.log(tp_analytics);
-    var endpoint = "".concat(tp_analytics.site_url, "/wp-json/tp/v1/chart/post-views/");
+    //console.log(tpdivi_analytics);
+    var endpoint = "".concat(tpdivi_analytics.site_url, "/wp-json/tp/v1/chart/post-views/");
     fetch(endpoint, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'X-WP-Nonce': tpdivi_analytics.nonce
       },
       body: JSON.stringify({
         attributes: {
@@ -58441,7 +58442,7 @@ var AnalyticsChart = function AnalyticsChart() {
   }, /*#__PURE__*/_react.default.createElement("h2", null, formatViews(filteredPostsviews || 0)), /*#__PURE__*/_react.default.createElement("h5", null, "Post Views")), /*#__PURE__*/_react.default.createElement("span", {
     className: "trusty-analytics-icons tp-icon-views"
   }, /*#__PURE__*/_react.default.createElement("img", {
-    src: "".concat(tp_analytics.assets_url, "/icon-views.png")
+    src: "".concat(tpdivi_analytics.assets_url, "/icon-views.png")
   }))), /*#__PURE__*/_react.default.createElement("div", {
     className: "tp-filter-view-data",
     title: totalPostsviews
@@ -58462,7 +58463,7 @@ var AnalyticsChart = function AnalyticsChart() {
   }, /*#__PURE__*/_react.default.createElement("h2", null, formatViews(filteredPostsCount)), /*#__PURE__*/_react.default.createElement("h5", null, "Posts")), /*#__PURE__*/_react.default.createElement("span", {
     className: "trusty-analytics-icons tp-icon-views"
   }, /*#__PURE__*/_react.default.createElement("img", {
-    src: "".concat(tp_analytics.assets_url, "/icon-posts.png")
+    src: "".concat(tpdivi_analytics.assets_url, "/icon-posts.png")
   }))), /*#__PURE__*/_react.default.createElement("div", {
     className: "tp-filter-view-data",
     title: totalPostsCount
@@ -58483,7 +58484,7 @@ var AnalyticsChart = function AnalyticsChart() {
   }, /*#__PURE__*/_react.default.createElement("h2", null, formatViews(lastMonthViews)), /*#__PURE__*/_react.default.createElement("h5", null, "Last Month")), /*#__PURE__*/_react.default.createElement("span", {
     className: "trusty-analytics-icons tp-icon-views"
   }, /*#__PURE__*/_react.default.createElement("img", {
-    src: "".concat(tp_analytics.assets_url, "/icon-month.png")
+    src: "".concat(tpdivi_analytics.assets_url, "/icon-month.png")
   }))), /*#__PURE__*/_react.default.createElement("div", {
     className: "tp-filter-view-data",
     title: totalPostsviews
@@ -58504,7 +58505,7 @@ var AnalyticsChart = function AnalyticsChart() {
   }, /*#__PURE__*/_react.default.createElement("h2", null, formatViews(todayViews)), /*#__PURE__*/_react.default.createElement("h5", null, "Today's Views")), /*#__PURE__*/_react.default.createElement("span", {
     className: "trusty-analytics-icons tp-icon-views"
   }, /*#__PURE__*/_react.default.createElement("img", {
-    src: "".concat(tp_analytics.assets_url, "/icon-day.png")
+    src: "".concat(tpdivi_analytics.assets_url, "/icon-day.png")
   }))), /*#__PURE__*/_react.default.createElement("div", {
     className: "tp-filter-view-data",
     title: totalPostsviews
@@ -58593,7 +58594,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62453" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51339" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

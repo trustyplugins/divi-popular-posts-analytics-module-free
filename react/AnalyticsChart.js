@@ -59,12 +59,13 @@ const AnalyticsChart = () => {
 
 
   const fetchData = (startDate, endDate, selectedPostType) => {
-    //console.log(tp_analytics);
-    const endpoint = `${tp_analytics.site_url}/wp-json/tp/v1/chart/post-views/`;
+    //console.log(tpdivi_analytics);
+    const endpoint = `${tpdivi_analytics.site_url}/wp-json/tp/v1/chart/post-views/`;
     fetch(endpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'X-WP-Nonce': tpdivi_analytics.nonce, 
       },
       body: JSON.stringify({
         attributes: {
@@ -438,7 +439,7 @@ bars
                         <div className="tp-view-manager">
                           <div className="views-cnt" title={filteredPostsviews}><h2>{formatViews(filteredPostsviews || 0) }</h2><h5>Post Views</h5></div>
                           {/* <span className="dashicons dashicons-welcome-view-site"></span> */}
-                          <span className="trusty-analytics-icons tp-icon-views"><img src={`${tp_analytics.assets_url}/icon-views.png`} /></span>
+                          <span className="trusty-analytics-icons tp-icon-views"><img src={`${tpdivi_analytics.assets_url}/icon-views.png`} /></span>
                         </div>
                         <div className="tp-filter-view-data" title={totalPostsviews}><h2>Total Views : {formatViews(totalPostsviews)} <span className="dashicons dashicons-arrow-up"></span></h2></div>
                       </>
@@ -455,7 +456,7 @@ bars
                       <>
                         <div className="tp-view-manager">
                           <div className="views-cnt" title={filteredPostsCount}><h2>{formatViews(filteredPostsCount)}</h2><h5>Posts</h5></div>
-                          <span className="trusty-analytics-icons tp-icon-views"><img src={`${tp_analytics.assets_url}/icon-posts.png`} /></span>
+                          <span className="trusty-analytics-icons tp-icon-views"><img src={`${tpdivi_analytics.assets_url}/icon-posts.png`} /></span>
                         </div>
                         <div className="tp-filter-view-data" title={totalPostsCount}><h2>Total Posts : {formatViews(totalPostsCount)} <span className="dashicons dashicons-arrow-up"></span></h2></div></>
                     )
@@ -472,7 +473,7 @@ bars
                       <>
                         <div className="tp-view-manager">
                         <div className="views-cnt" title={lastMonthViews}><h2>{formatViews(lastMonthViews)}</h2><h5>Last Month</h5></div>
-                        <span className="trusty-analytics-icons tp-icon-views"><img src={`${tp_analytics.assets_url}/icon-month.png`} /></span>
+                        <span className="trusty-analytics-icons tp-icon-views"><img src={`${tpdivi_analytics.assets_url}/icon-month.png`} /></span>
                         </div>
                         <div className="tp-filter-view-data" title={totalPostsviews}><h2>Total Views : {formatViews(totalPostsviews)} <span className="dashicons dashicons-arrow-up"></span></h2></div></>
                     )
@@ -489,7 +490,7 @@ bars
                       <>
                         <div className="tp-view-manager">
                         <div className="views-cnt" title={todayViews}><h2>{formatViews(todayViews)}</h2><h5>Today's Views</h5></div>
-                        <span className="trusty-analytics-icons tp-icon-views"><img src={`${tp_analytics.assets_url}/icon-day.png`} /></span>
+                        <span className="trusty-analytics-icons tp-icon-views"><img src={`${tpdivi_analytics.assets_url}/icon-day.png`} /></span>
                         </div>
                         <div className="tp-filter-view-data" title={totalPostsviews}><h2>Total Views : {formatViews(totalPostsviews)} <span className="dashicons dashicons-arrow-up"></span></h2></div></>
                     )
